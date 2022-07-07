@@ -39,7 +39,7 @@ export function Header({ email }: { email?: string }) {
                   src="/_static/img/logo.svg"
                   alt="NASA logo"
                 />
-                <span id="site-title">General Coordinates Network</span>
+                <span id="site-title">Multimessenger Astrophysics</span>
               </Link>
             </Title>
             <NavMenuButton onClick={onClick} label="Menu" />
@@ -50,16 +50,65 @@ export function Header({ email }: { email?: string }) {
               <NavLink className="usa-nav__link" to="/missions" key="/missions">
                 Missions
               </NavLink>,
-              <NavLink className="usa-nav__link" to="/notices" key="/notices">
-                Notices
+
+              <NavLink className="usa-nav__link" to="/gcn" key="/gcn">
+                Transient Alerts
               </NavLink>,
               <NavLink
                 className="usa-nav__link"
-                to="/circulars"
-                key="/circulars"
+                to="/proposals"
+                key="/proposals"
               >
-                Circulars
+                Proposals
               </NavLink>,
+              /**  gcn (<>
+              <NavDropDownButton
+                    className={pathMatches('/user') ? 'active' : undefined}
+                    type="button"
+                    key="gcn"
+                    label={gcn}
+                    isOpen={userMenuIsOpen}
+                    onToggle={() => setUserMenuIsOpen(!userMenuIsOpen)}
+                    menuId="gcn"
+              />
+              <Menu
+                    id="gcn"
+                    isOpen={userMenuIsOpen}
+                    items={[
+                      <Link className="usa-nav__link" key="notices" to="/notices">
+                        Notices
+                      </Link>,
+                       <Link className="usa-nav__link" key="circulars" to="/circulars">
+                       Circulars
+                     </Link>,
+                    ]}
+              />
+               </>
+               ),
+               */
+              <NavLink className="usa-nav__link" to="/tools" key="/tools">
+                Tools
+              </NavLink>,
+              <NavLink
+                className="usa-nav__link"
+                to="/conferences"
+                key="/conferences"
+              >
+                Conferences
+              </NavLink>,
+
+              /**
+               *              <NavLink className="usa-nav__link" to="/notices" key="/notices">
+               *                Notices
+               *              </NavLink>,
+               *              <NavLink
+               *                className="usa-nav__link"
+               *                to="/circulars"
+               *                key="/circulars"
+               *              >
+               *                Circulars
+               *              </NavLink>,
+               */
               <NavLink className="usa-nav__link" to="/docs" key="/docs">
                 Documentation
               </NavLink>,
