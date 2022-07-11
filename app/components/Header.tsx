@@ -85,11 +85,7 @@ export function Header({ email }: { email?: string }) {
                     >
                       Circulars
                     </Link>,
-                    <Link
-                      className="usa-nav__link"
-                      key="circulars"
-                      to="/documentation"
-                    >
+                    <Link className="usa-nav__link" key="circulars" to="/docs">
                       Documentation
                     </Link>,
                   ]}
@@ -105,9 +101,6 @@ export function Header({ email }: { email?: string }) {
               >
                 Conferences
               </NavLink>,
-              // <NavLink className="usa-nav__link" to="/docs" key="/docs">
-              //   Documentation
-              // </NavLink>,
               email ? (
                 <>
                   <NavDropDownButton
