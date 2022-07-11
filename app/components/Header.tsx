@@ -21,6 +21,7 @@ export function Header({ email }: { email?: string }) {
   const { pathname } = useLocation()
   const [expanded, setExpanded] = useState(false)
   const [userMenuIsOpen, setUserMenuIsOpen] = useState(false)
+  const [transientMenuIsOpen, setTransientMenuIsOpen] = useState(false)
   const onClick = () => setExpanded((prvExpanded) => !prvExpanded)
 
   const pathMatches = (path: string) =>
@@ -50,10 +51,6 @@ export function Header({ email }: { email?: string }) {
               <NavLink className="usa-nav__link" to="/missions" key="/missions">
                 Missions
               </NavLink>,
-
-              <NavLink className="usa-nav__link" to="/gcn" key="/gcn">
-                Transient Alerts
-              </NavLink>,
               <NavLink
                 className="usa-nav__link"
                 to="/proposals"
@@ -61,31 +58,43 @@ export function Header({ email }: { email?: string }) {
               >
                 Proposals
               </NavLink>,
-              /**  gcn (<>
-              <NavDropDownButton
-                    className={pathMatches('/user') ? 'active' : undefined}
-                    type="button"
-                    key="gcn"
-                    label={gcn}
-                    isOpen={userMenuIsOpen}
-                    onToggle={() => setUserMenuIsOpen(!userMenuIsOpen)}
-                    menuId="gcn"
-              />
-              <Menu
-                    id="gcn"
-                    isOpen={userMenuIsOpen}
-                    items={[
-                      <Link className="usa-nav__link" key="notices" to="/notices">
-                        Notices
-                      </Link>,
-                       <Link className="usa-nav__link" key="circulars" to="/circulars">
-                       Circulars
-                     </Link>,
-                    ]}
-              />
-               </>
-               ),
-               */
+              <>
+                <NavDropDownButton
+                  className={pathMatches('/gcn') ? 'active' : undefined}
+                  type="button"
+                  key="gcn"
+                  label="Transient Alerts"
+                  isOpen={transientMenuIsOpen}
+                  onToggle={() => setTransientMenuIsOpen(!transientMenuIsOpen)}
+                  menuId="gcn"
+                />
+                <Menu
+                  id="gcn"
+                  isOpen={transientMenuIsOpen}
+                  items={[
+                    <Link className="usa-nav__link" key="notices" to="/gcn">
+                      GCN
+                    </Link>,
+                    <Link className="usa-nav__link" key="notices" to="/notices">
+                      Notices
+                    </Link>,
+                    <Link
+                      className="usa-nav__link"
+                      key="circulars"
+                      to="/circulars"
+                    >
+                      Circulars
+                    </Link>,
+                    <Link
+                      className="usa-nav__link"
+                      key="circulars"
+                      to="/documentation"
+                    >
+                      Documentation
+                    </Link>,
+                  ]}
+                />
+              </>,
               <NavLink className="usa-nav__link" to="/tools" key="/tools">
                 Tools
               </NavLink>,
@@ -96,22 +105,9 @@ export function Header({ email }: { email?: string }) {
               >
                 Conferences
               </NavLink>,
-
-              /**
-               *              <NavLink className="usa-nav__link" to="/notices" key="/notices">
-               *                Notices
-               *              </NavLink>,
-               *              <NavLink
-               *                className="usa-nav__link"
-               *                to="/circulars"
-               *                key="/circulars"
-               *              >
-               *                Circulars
-               *              </NavLink>,
-               */
-              <NavLink className="usa-nav__link" to="/docs" key="/docs">
-                Documentation
-              </NavLink>,
+              // <NavLink className="usa-nav__link" to="/docs" key="/docs">
+              //   Documentation
+              // </NavLink>,
               email ? (
                 <>
                   <NavDropDownButton
