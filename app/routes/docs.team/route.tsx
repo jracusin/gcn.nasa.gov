@@ -34,21 +34,15 @@ function TeamCard({
 }) {
   return (
     <>
-      <div className="usa-card__container margin-bottom-2 grid-col-3">
-        <CardMedia imageClass="bg-white padding-1">
-          <img
-            src={photo}
-            width="200"
-            height="200"
-            loading="lazy"
-            alt="placeholder"
-          />
+      <div className="usa-card__container margin-bottom-2 grid-col-4">
+        <CardMedia imageClass="bg-white margin-0">
+          <img src={photo} loading="lazy" alt="placeholder" />
         </CardMedia>
         <CardHeader>
-          <h3 style={{ marginBottom: '0px' }}>{name}</h3>
-          <p style={{ marginTop: '0px', fontSize: '14px' }}>{affiliation}</p>
+          <h4 style={{ marginBottom: '0px' }}>{name}</h4>
+          <p style={{ marginTop: '0px', fontSize: '12px' }}>{affiliation}</p>
         </CardHeader>
-        <CardBody>{children}</CardBody>
+        <CardBody style={{ fontSize: '16px' }}>{children}</CardBody>
       </div>
     </>
   )
@@ -68,38 +62,38 @@ export default function () {
       </p>
       <CardGroup>
         <TeamCard name="Judy Racusin" affiliation="NASA/GSFC" photo={headshot}>
-          Principal Investigator (2018--)
+          Principal Investigator
         </TeamCard>
         <TeamCard name="Leo Singer" affiliation="NASA/GSFC" photo={headshot}>
-          Lead Developer (2019--)
+          Lead Developer
         </TeamCard>
         <TeamCard
           name="Dakota Dutko"
           affiliation="NASA/GSFC/ADNET"
           photo={headshot}
         >
-          Full-Stack Developer (2022--)
+          Full-Stack Developer
         </TeamCard>
         <TeamCard
           name="Courey Elliott"
-          affiliation="Lousiana State University/NextSource"
+          affiliation="Lousiana State University/ NextSource"
           photo={headshot}
         >
-          Full-Stack Developer (2023--)
+          Full-Stack Developer
         </TeamCard>
         <TeamCard
           name="Vidushi Sharma"
           affiliation="NASA/GSFC/UMBC"
           photo={headshot}
         >
-          Postdoc (2022--)
+          Postdoc
         </TeamCard>
         <TeamCard
           name="Tyler Barna"
           affiliation="University of Minnesota"
           photo={headshot}
         >
-          Ph.D. Student (2023--)
+          Ph.D. Student
         </TeamCard>
       </CardGroup>
     </GridContainer>
