@@ -55,7 +55,7 @@ function TeamCard({
       {(selectedTags.length == 0 ||
         selectedTags.every((tag) => tagSet.has(tag))) && (
         <CardGroup className="usa-card__container margin-bottom-2 grid-col-4">
-          <CardMedia imageClass="bg-white padding-0">
+          <CardMedia imageClass="bg-white margin-0 padding-0">
             <img
               src={photo}
               width="40"
@@ -73,7 +73,7 @@ function TeamCard({
             <p style={{ marginTop: '0px', fontSize: '12px' }}>{affiliation}</p>
           </CardHeader>
           <CardBody style={{ fontSize: '16px' }}>{children}</CardBody>
-          <CardFooter style={{ fontSize: '10px' }}>
+          <CardFooter>
             {tags?.map((tag) => <Tag key={tag}>{tag}</Tag>)}
           </CardFooter>
         </CardGroup>
@@ -160,7 +160,7 @@ export default function () {
           affiliation="NASA/GSFC"
           photo={headshot}
           href="https://github.com/jracusin"
-          tags={['moderator', 'classic']}
+          tags={['moderator']}
           selectedTags={tagNames}
         >
           Principal Investigator
