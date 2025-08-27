@@ -74,7 +74,11 @@ function TeamCard({
           </CardHeader>
           <CardBody style={{ fontSize: '16px' }}>{children}</CardBody>
           <CardFooter>
-            {tags?.map((tag) => <Tag key={tag}>{tag}</Tag>)}
+            {tags?.map((tag) => (
+              <Tag key={tag} className="font-body-3xs">
+                {tag}
+              </Tag>
+            ))}
           </CardFooter>
         </CardGroup>
       )}
