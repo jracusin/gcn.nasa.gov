@@ -30,6 +30,7 @@ import leo from './leo_photo.jpeg'
 import type { BreadcrumbHandle } from '~/root/Title'
 
 import headshot from './headshot.png'
+import judy from './judy_photo.png'
 
 export const handle: BreadcrumbHandle = { breadcrumb: 'Team' }
 
@@ -164,7 +165,7 @@ export default function () {
         <TeamCard
           name="Judy Racusin"
           affiliation="NASA/GSFC"
-          photo={headshot}
+          photo={judy}
           href="https://github.com/jracusin"
           tags={['moderator', 'classic']}
           selectedTags={tagNames}
