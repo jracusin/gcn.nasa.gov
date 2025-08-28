@@ -26,11 +26,16 @@ import type {
   TagRendererProps,
 } from 'react-tag-autocomplete'
 
+import team2 from '../news._index/AAS243_booth.jpg'
+import team1 from './gcn_team_photo-1.jpg'
+import team3 from './gcn_team_photo-3.jpg'
+import team4 from './gcn_team_photo-4.jpg'
 import leo from './leo_photo.jpeg'
 import type { BreadcrumbHandle } from '~/root/Title'
 
 import headshot from './headshot.png'
 import judy from './judy_photo.png'
+import vidushi from './vidushi_photo.png'
 
 export const handle: BreadcrumbHandle = { breadcrumb: 'Team' }
 
@@ -56,8 +61,8 @@ function TeamCard({
     <>
       {(selectedTags.length == 0 ||
         selectedTags.every((tag) => tagSet.has(tag))) && (
-        <CardGroup className="usa-card__container margin-bottom-2 grid-col-4">
-          <CardMedia imageClass="bg-white margin-0 padding-0">
+        <CardGroup className="usa-card__container margin-bottom-1 grid-col-4">
+          <CardMedia imageClass="bg-white margin-bottom-neg-2 height-auto">
             <img
               src={photo}
               width="40"
@@ -75,7 +80,7 @@ function TeamCard({
             <p style={{ marginTop: '0px', fontSize: '12px' }}>{affiliation}</p>
           </CardHeader>
           <CardBody style={{ fontSize: '16px' }}>{children}</CardBody>
-          <CardFooter>
+          <CardFooter style={{ marginBottom: '0px' }}>
             {tags?.map((tag) => (
               <Tag key={tag} className="font-body-3xs">
                 {tag}
@@ -100,7 +105,7 @@ function renderTag({
         <Button type="button" unstyled>
           <Icon.Close
             role="presentation"
-            className="margin-left-1 text-bottom"
+            className="text-bottom"
             color="white"
           />
         </Button>
@@ -141,7 +146,7 @@ export default function () {
         </Link>{' '}
         .
       </p>
-      <div className="margin-bottom-2">
+      <div className="margin-bottom-1">
         <ReactTags
           onAdd={(tag) => setTags((prevTags) => [...prevTags, tag])}
           onDelete={(i) =>
@@ -197,7 +202,7 @@ export default function () {
           affiliation="LSU/NextSource"
           photo={headshot}
           href="https://github.com/courey"
-          tags={['kafka']}
+          tags={[]}
           selectedTags={tagNames}
         >
           Full-Stack Developer
@@ -205,7 +210,7 @@ export default function () {
         <TeamCard
           name="Vidushi Sharma"
           affiliation="NASA/GSFC/UMBC"
-          photo={headshot}
+          photo={vidushi}
           href="https://github.com/vidushi-github"
           tags={['moderator']}
           selectedTags={tagNames}
@@ -217,7 +222,7 @@ export default function () {
           affiliation="UMN"
           photo={headshot}
           href="https://github.com/tylerbarna"
-          tags={['']}
+          tags={[]}
           selectedTags={tagNames}
         >
           Ph.D. Student
@@ -227,7 +232,7 @@ export default function () {
           affiliation="LSU"
           photo={headshot}
           href="https://github.com/eburnsastro"
-          tags={['']}
+          tags={[]}
           selectedTags={tagNames}
         >
           Collaborator
@@ -237,7 +242,7 @@ export default function () {
           affiliation="UMN"
           photo={headshot}
           href="https://github.com/mcoughlin"
-          tags={['']}
+          tags={[]}
           selectedTags={tagNames}
         >
           Collaborator
@@ -266,6 +271,40 @@ export default function () {
           GCN Classic Developer
         </TeamCard>
       </CardGroup>
+      <div className="grid-col-4 margin-bottom-4 ">
+        <img
+          src={team1}
+          width="500"
+          height="400"
+          loading="lazy"
+          alt="GCN Team at GSFC"
+          className="height-auto"
+        />
+        <img
+          src={team2}
+          width="500"
+          height="300"
+          loading="lazy"
+          alt="GCN Team at AAS 243"
+          className="height-auto"
+        />
+        <img
+          src={team3}
+          width="500"
+          height="300"
+          loading="lazy"
+          alt="GCN Team at GCN Meeting 2024"
+          className="height-auto"
+        />
+        <img
+          src={team4}
+          width="500"
+          height="300"
+          loading="lazy"
+          alt="GCN Team at AAS 245"
+          className="height-auto"
+        />
+      </div>
     </GridContainer>
   )
 }
