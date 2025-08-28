@@ -26,6 +26,7 @@ import type {
   TagRendererProps,
 } from 'react-tag-autocomplete'
 
+import leo from './leo_photo.jpeg'
 import type { BreadcrumbHandle } from '~/root/Title'
 
 import headshot from './headshot.png'
@@ -126,7 +127,7 @@ function renderOption({
 
 export default function () {
   const [tags, setTags] = useState<ReactTag[]>([])
-  const suggestions = ['moderator', 'classic', 'kafka']
+  const suggestions = ['moderator', 'classic', 'kafka', 'producers']
   const tagNames = tags.map(({ label }) => label)
   return (
     <GridContainer className="usa-section">
@@ -158,13 +159,14 @@ export default function () {
           placeholderText="Filter by tag"
         />
       </div>
+      <h2>Current Team</h2>
       <CardGroup>
         <TeamCard
           name="Judy Racusin"
           affiliation="NASA/GSFC"
           photo={headshot}
           href="https://github.com/jracusin"
-          tags={['moderator']}
+          tags={['moderator', 'classic']}
           selectedTags={tagNames}
         >
           Principal Investigator
@@ -172,7 +174,7 @@ export default function () {
         <TeamCard
           name="Leo Singer"
           affiliation="NASA/GSFC"
-          photo={headshot}
+          photo={leo}
           href="https://github.com/lpsinger"
           tags={['moderator', 'kafka']}
           selectedTags={tagNames}
@@ -218,6 +220,49 @@ export default function () {
           selectedTags={tagNames}
         >
           Ph.D. Student
+        </TeamCard>
+        <TeamCard
+          name="Eric Burns"
+          affiliation="LSU"
+          photo={headshot}
+          href="https://github.com/eburnsastro"
+          tags={['']}
+          selectedTags={tagNames}
+        >
+          Collaborator
+        </TeamCard>
+        <TeamCard
+          name="Michael Coughlin"
+          affiliation="UMN"
+          photo={headshot}
+          href="https://github.com/mcoughlin"
+          tags={['']}
+          selectedTags={tagNames}
+        >
+          Collaborator
+        </TeamCard>
+      </CardGroup>
+      <h2>Past Team</h2>
+      <CardGroup>
+        <TeamCard
+          name="Scott Barthelmy"
+          affiliation="NASA/GSFC (retired)"
+          photo={headshot}
+          href=""
+          tags={['classic']}
+          selectedTags={tagNames}
+        >
+          GCN Classic Founder
+        </TeamCard>
+        <TeamCard
+          name="Teresa Sheets"
+          affiliation="NASA/GSFC (retired)"
+          photo={headshot}
+          href=""
+          tags={['classic']}
+          selectedTags={tagNames}
+        >
+          GCN Classic Developer
         </TeamCard>
       </CardGroup>
     </GridContainer>
