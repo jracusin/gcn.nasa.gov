@@ -27,6 +27,7 @@ import type {
 } from 'react-tag-autocomplete'
 
 import team2 from '../news._index/AAS243_booth.jpg'
+import courey from './courey_photo.jpeg'
 import team1 from './gcn_team_photo-1.jpg'
 import team3 from './gcn_team_photo-3.jpg'
 import team4 from './gcn_team_photo-4.jpg'
@@ -61,12 +62,12 @@ function TeamCard({
     <>
       {(selectedTags.length == 0 ||
         selectedTags.every((tag) => tagSet.has(tag))) && (
-        <CardGroup className="usa-card__container margin-bottom-1 grid-col-4">
-          <CardMedia imageClass="bg-white margin-bottom-neg-2 height-auto">
+        <CardGroup className="usa-card__container margin-bottom-1 tablet:grid-col-4">
+          <CardMedia imageClass="bg-white margin-bottom-neg-2">
             <img
               src={photo}
-              width="40"
-              height="40"
+              width="50"
+              height="50"
               loading="lazy"
               alt="placeholder"
             />
@@ -200,7 +201,7 @@ export default function () {
         <TeamCard
           name="Courey Elliott"
           affiliation="LSU/NextSource"
-          photo={headshot}
+          photo={courey}
           href="https://github.com/courey"
           tags={[]}
           selectedTags={tagNames}
