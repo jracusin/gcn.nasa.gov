@@ -32,6 +32,7 @@ import team1 from './gcn_team_photo-1.jpg'
 import team3 from './gcn_team_photo-3.jpg'
 import team4 from './gcn_team_photo-4.jpg'
 import leo from './leo_photo.jpeg'
+import tyler from './tyler_photo.jpg'
 import type { BreadcrumbHandle } from '~/root/Title'
 
 import headshot from './headshot.png'
@@ -69,7 +70,7 @@ function TeamCard({
               width="50"
               height="50"
               loading="lazy"
-              alt="placeholder"
+              alt="headshot of GCN team member"
             />
           </CardMedia>
           <CardHeader>
@@ -221,7 +222,7 @@ export default function () {
         <div className="grid-col-9 margin-bottom-4 ">
           <img
             src={team2}
-            width="500"
+            width="300"
             height="300"
             loading="lazy"
             alt="GCN Team at AAS 243"
@@ -241,7 +242,7 @@ export default function () {
         <TeamCard
           name="Tyler Barna"
           affiliation="UMN"
-          photo={headshot}
+          photo={tyler}
           href="https://github.com/tylerbarna"
           tags={[]}
           selectedTags={tagNames}
