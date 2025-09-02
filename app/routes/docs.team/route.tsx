@@ -188,6 +188,16 @@ export default function () {
         >
           Lead Developer
         </TeamCard>
+        <div className="grid-col-9 margin-bottom-4 ">
+          <img
+            src={team1}
+            width="500"
+            height="400"
+            loading="lazy"
+            alt="GCN Team at GSFC"
+            className="height-auto"
+          />
+        </div>
         <TeamCard
           name="Dakota Dutko"
           affiliation="NASA/GSFC/ADNET"
@@ -208,6 +218,16 @@ export default function () {
         >
           Full-Stack Developer
         </TeamCard>
+        <div className="grid-col-9 margin-bottom-4 ">
+          <img
+            src={team2}
+            width="500"
+            height="300"
+            loading="lazy"
+            alt="GCN Team at AAS 243"
+            className="height-auto"
+          />
+        </div>
         <TeamCard
           name="Vidushi Sharma"
           affiliation="NASA/GSFC/UMBC"
@@ -228,6 +248,16 @@ export default function () {
         >
           Ph.D. Student
         </TeamCard>
+        <div className="grid-col-9 margin-bottom-4 ">
+          <img
+            src={team3}
+            width="500"
+            height="300"
+            loading="lazy"
+            alt="GCN Team at GCN Meeting 2024"
+            className="height-auto"
+          />
+        </div>
         <TeamCard
           name="Eric Burns"
           affiliation="LSU"
@@ -248,6 +278,16 @@ export default function () {
         >
           Collaborator
         </TeamCard>
+        <div className="grid-col-9 margin-bottom-4 ">
+          <img
+            src={team4}
+            width="500"
+            height="300"
+            loading="lazy"
+            alt="GCN Team at AAS 245"
+            className="height-auto"
+          />
+        </div>
       </CardGroup>
       <h2>Past Team</h2>
       <CardGroup>
@@ -272,40 +312,6 @@ export default function () {
           GCN Classic Developer
         </TeamCard>
       </CardGroup>
-      <div className="grid-col-4 margin-bottom-4 ">
-        <img
-          src={team1}
-          width="500"
-          height="400"
-          loading="lazy"
-          alt="GCN Team at GSFC"
-          className="height-auto"
-        />
-        <img
-          src={team2}
-          width="500"
-          height="300"
-          loading="lazy"
-          alt="GCN Team at AAS 243"
-          className="height-auto"
-        />
-        <img
-          src={team3}
-          width="500"
-          height="300"
-          loading="lazy"
-          alt="GCN Team at GCN Meeting 2024"
-          className="height-auto"
-        />
-        <img
-          src={team4}
-          width="500"
-          height="300"
-          loading="lazy"
-          alt="GCN Team at AAS 245"
-          className="height-auto"
-        />
-      </div>
     </GridContainer>
   )
 }
