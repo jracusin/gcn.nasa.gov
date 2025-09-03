@@ -8,11 +8,13 @@
 import { Link } from '@remix-run/react'
 import {
   Button,
+  Card,
   CardBody,
   CardFooter,
   CardGroup,
   CardHeader,
   CardMedia,
+  Grid,
   GridContainer,
   Icon,
   Tag,
@@ -63,7 +65,7 @@ function TeamCard({
     <>
       {(selectedTags.length == 0 ||
         selectedTags.every((tag) => tagSet.has(tag))) && (
-        <CardGroup className="usa-card__container margin-bottom-1 tablet:grid-col-4">
+        <Card className="grid-col-fill">
           <CardMedia imageClass="bg-white margin-bottom-neg-2">
             <img
               src={photo}
@@ -89,9 +91,22 @@ function TeamCard({
               </Tag>
             ))}
           </CardFooter>
-        </CardGroup>
+        </Card>
       )}
     </>
+  )
+}
+
+function TeamPicture({ src, altText }: { src: string; altText: string }) {
+  return (
+    <GridContainer>
+      <Grid
+        row
+        className="maxh-mobile-lg maxw-tablet overflow-hidden margin-bottom-4"
+      >
+        <img src={src} loading="lazy" alt={altText} />
+      </Grid>
+    </GridContainer>
   )
 }
 
@@ -138,7 +153,7 @@ export default function () {
   const suggestions = ['moderator', 'classic', 'kafka', 'producers']
   const tagNames = tags.map(({ label }) => label)
   return (
-    <GridContainer className="usa-section">
+    <>
       <h1>GCN Team</h1>
       <p className="usa-paragraph">
         The current and past contributors to GCN. For questions, please contact
@@ -168,128 +183,121 @@ export default function () {
         />
       </div>
       <h2>Current Team</h2>
-      <CardGroup>
-        <TeamCard
-          name="Judy Racusin"
-          affiliation="NASA/GSFC"
-          photo={judy}
-          href="https://github.com/jracusin"
-          tags={['moderator', 'classic']}
-          selectedTags={tagNames}
-        >
-          Principal Investigator
-        </TeamCard>
-        <TeamCard
-          name="Leo Singer"
-          affiliation="NASA/GSFC"
-          photo={leo}
-          href="https://github.com/lpsinger"
-          tags={['moderator', 'kafka']}
-          selectedTags={tagNames}
-        >
-          Lead Developer
-        </TeamCard>
-        <div className="grid-col-9 margin-bottom-4 ">
-          <img
-            src={team1}
-            width="500"
-            height="400"
-            loading="lazy"
-            alt="GCN Team at GSFC"
-            className="height-auto"
-          />
-        </div>
-        <TeamCard
-          name="Dakota Dutko"
-          affiliation="NASA/GSFC/ADNET"
-          photo={headshot}
-          href="https://github.com/dakota002"
-          tags={['moderator', 'kafka']}
-          selectedTags={tagNames}
-        >
-          Full-Stack Developer
-        </TeamCard>
-        <TeamCard
-          name="Courey Elliott"
-          affiliation="LSU/NextSource"
-          photo={courey}
-          href="https://github.com/courey"
-          tags={[]}
-          selectedTags={tagNames}
-        >
-          Full-Stack Developer
-        </TeamCard>
-        <div className="grid-col-9 margin-bottom-4 ">
-          <img
-            src={team2}
-            width="300"
-            height="300"
-            loading="lazy"
-            alt="GCN Team at AAS 243"
-            className="height-auto"
-          />
-        </div>
-        <TeamCard
-          name="Vidushi Sharma"
-          affiliation="NASA/GSFC/UMBC"
-          photo={vidushi}
-          href="https://github.com/vidushi-github"
-          tags={['moderator']}
-          selectedTags={tagNames}
-        >
-          Postdoc
-        </TeamCard>
-        <TeamCard
-          name="Tyler Barna"
-          affiliation="UMN"
-          photo={tyler}
-          href="https://github.com/tylerbarna"
-          tags={[]}
-          selectedTags={tagNames}
-        >
-          Ph.D. Student
-        </TeamCard>
-        <div className="grid-col-9 margin-bottom-4 ">
-          <img
-            src={team3}
-            width="500"
-            height="300"
-            loading="lazy"
-            alt="GCN Team at GCN Meeting 2024"
-            className="height-auto"
-          />
-        </div>
-        <TeamCard
-          name="Eric Burns"
-          affiliation="LSU"
-          photo={headshot}
-          href="https://github.com/eburnsastro"
-          tags={[]}
-          selectedTags={tagNames}
-        >
-          Collaborator
-        </TeamCard>
-        <TeamCard
-          name="Michael Coughlin"
-          affiliation="UMN"
-          photo={headshot}
-          href="https://github.com/mcoughlin"
-          tags={[]}
-          selectedTags={tagNames}
-        >
-          Collaborator
-        </TeamCard>
-        <div className="grid-col-9 margin-bottom-4 ">
-          <img
-            src={team4}
-            width="500"
-            height="300"
-            loading="lazy"
-            alt="GCN Team at AAS 245"
-            className="height-auto"
-          />
-        </div>
-      </CardGroup>
+
+      <GridContainer>
+        <Grid row>
+          <CardGroup>
+            <TeamCard
+              name="Judy Racusin"
+              affiliation="NASA/GSFC"
+              photo={judy}
+              href="https://github.com/jracusin"
+              tags={['moderator', 'classic']}
+              selectedTags={tagNames}
+            >
+              Principal Investigator
+            </TeamCard>
+
+            <TeamCard
+              name="Leo Singer"
+              affiliation="NASA/GSFC"
+              photo={leo}
+              href="https://github.com/lpsinger"
+              tags={['moderator', 'kafka']}
+              selectedTags={tagNames}
+            >
+              Lead Developer
+            </TeamCard>
+          </CardGroup>
+        </Grid>
+
+        <TeamPicture src={team1} altText="GCN Team at GSFC" />
+
+        <Grid row>
+          <CardGroup>
+            <TeamCard
+              name="Dakota Dutko"
+              affiliation="NASA/GSFC/ADNET"
+              photo={headshot}
+              href="https://github.com/dakota002"
+              tags={['moderator', 'kafka']}
+              selectedTags={tagNames}
+            >
+              Full-Stack Developer
+            </TeamCard>
+
+            <TeamCard
+              name="Courey Elliott"
+              affiliation="LSU/NextSource"
+              photo={courey}
+              href="https://github.com/courey"
+              tags={[]}
+              selectedTags={tagNames}
+            >
+              Full-Stack Developer
+            </TeamCard>
+          </CardGroup>
+        </Grid>
+
+        <TeamPicture src={team2} altText="GCN Team at AAS 243" />
+
+        <Grid row>
+          <CardGroup>
+            <TeamCard
+              name="Vidushi Sharma"
+              affiliation="NASA/GSFC/UMBC"
+              photo={vidushi}
+              href="https://github.com/vidushi-github"
+              tags={['moderator']}
+              selectedTags={tagNames}
+            >
+              Postdoc
+            </TeamCard>
+
+            <TeamCard
+              name="Tyler Barna"
+              affiliation="UMN"
+              photo={tyler}
+              href="https://github.com/tylerbarna"
+              tags={[]}
+              selectedTags={tagNames}
+            >
+              Ph.D. Student
+            </TeamCard>
+          </CardGroup>
+        </Grid>
+
+        <TeamPicture src={team3} altText="GCN Team at GCN Meeting 2024" />
+
+        <Grid row>
+          <CardGroup>
+            <TeamCard
+              name="Eric Burns"
+              affiliation="LSU"
+              photo={headshot}
+              href="https://github.com/eburnsastro"
+              tags={[]}
+              selectedTags={tagNames}
+            >
+              Collaborator
+            </TeamCard>
+
+            <TeamCard
+              name="Michael Coughlin"
+              affiliation="UMN"
+              photo={headshot}
+              href="https://github.com/mcoughlin"
+              tags={[]}
+              selectedTags={tagNames}
+            >
+              Collaborator
+            </TeamCard>
+          </CardGroup>
+        </Grid>
+
+        <TeamPicture src={team4} altText="GCN Team at AAS 245" />
+      </GridContainer>
+
       <h2>Past Team</h2>
       <CardGroup>
         <TeamCard
@@ -302,6 +310,7 @@ export default function () {
         >
           GCN Classic Founder
         </TeamCard>
+
         <TeamCard
           name="Teresa Sheets"
           affiliation="NASA/GSFC (retired)"
@@ -313,6 +322,6 @@ export default function () {
           GCN Classic Developer
         </TeamCard>
       </CardGroup>
-    </GridContainer>
+    </>
   )
 }
