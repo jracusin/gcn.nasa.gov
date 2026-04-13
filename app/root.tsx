@@ -268,10 +268,10 @@ export function Layout({ children }: { children?: ReactNode }) {
         <DevBanner />
         <Header />
         <NewsBanner>
-          Retirement of GCN Classic VOEvent Brokers. See{' '}
+          New! BOOM Notices and Schema v6.3.0. See{' '}
           <Link
             className="usa-link"
-            to="/news#retirement-of-gcn-classic-voevent-brokers"
+            to="/news#new-boom-notices-and-schema-v630"
           >
             news and announcements
           </Link>
